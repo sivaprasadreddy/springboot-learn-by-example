@@ -1,0 +1,26 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sivalabs.demo.mappers.UserMapper">
+	
+	<resultMap id="UserResultMap" type="User">
+	  	<id column="id"  property="id"  /> 
+	 	<result column="name"  property="name"  /> 
+	 	<result column="email"  property="email"  /> 	 
+	</resultMap>
+
+	<select id="findAllUsers" resultMap="UserResultMap">
+		select id, name, email from users
+	</select>
+		
+	<select id="findUserById" resultMap="UserResultMap">
+		select id, name, email from users WHERE id=#{id}
+	</select>
+		
+	<insert id="insertUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+		insert into users(name,email) values(#{name},#{email})
+	</insert>
+	
+</mapper>
+

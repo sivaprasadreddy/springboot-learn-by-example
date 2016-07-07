@@ -1,0 +1,12 @@
+<p class="post-header">{{post.title}}</p>
+<p>{{post.content}}</p>
+<p><button class="btn btn-danger" ng-click="deletePost(post.id)">Delete Post</button> </p>
+<hr/>
+
+<h3>Comments</h3>
+<div ng-repeat="comment in post.comments">
+	<p>Name: {{comment.name}}</p>
+	<p>Email: {{comment.email}}</p>
+	<p>{{comment.content}}</p>
+	<hr/>
+</div>

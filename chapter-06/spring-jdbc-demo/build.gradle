@@ -1,0 +1,52 @@
+buildscript {
+	repositories {
+		jcenter()
+	}
+	dependencies {
+		classpath "io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE"
+	}
+}
+
+apply plugin: "io.spring.dependency-management"
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+jar {
+	baseName = 'spring-jdbc-demo'
+	version = '1.0-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	jcenter()
+}
+
+dependencyManagement {
+	imports {
+		mavenBom 'io.spring.platform:platform-bom:2.0.1.RELEASE'
+	}
+}
+
+dependencies {
+	compile('org.springframework:spring-context')
+	compile('org.springframework:spring-jdbc')
+	compile('org.springframework:spring-test')
+	testCompile('junit:junit')
+	compile('org.slf4j:jcl-over-slf4j')
+	compile('org.slf4j:slf4j-api')
+	compile('org.slf4j:slf4j-log4j12')
+	compile('log4j:log4j')
+	compile('com.h2database:h2')
+	compile('commons-dbcp:commons-dbcp')
+	compile('mysql:mysql-connector-java')
+	compile('junit:junit')
+
+}
+
+eclipse {
+	classpath {
+		containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
+		containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
+	}
+}

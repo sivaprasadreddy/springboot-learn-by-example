@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	layout:decorator="layout">
+<head>
+<title>User Login</title>
+</head>
+<body>
+
+<div>
+	<div layout:fragment="content">
+    <h3>User Login Form</h3>
+
+    <form th:action="@{/login}" th:object="${user}" method="post">
+    
+        <div class="form-group" th:classappend="${#fields.hasErrors('email')}? 'has-error'">
+          <label>Email</label>
+          <input type="text" th:field="*{email}"/>
+          <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" th:class="text-red">Incorrect data</p>
+        </div>
+        
+        <div class="form-group" th:classappend="${#fields.hasErrors('password')}? 'has-error'">
+          <label>Password</label>
+          <input type="password" th:field="*{password}"  placeholder="Enter password"/>
+          <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" th:class="text-red">Incorrect data</p>
+        </div>
+               
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+    </form>
+    </div>
+</div>
+
+</body>
+</html>

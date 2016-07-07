@@ -1,0 +1,9 @@
+
+<div class="col-md-12">
+	<div class="post">
+		<h2>{{post.title}}</h2>
+		<p><strong> {{post.createdOn | date:'EEEE yyyy-MMMM-dd' | uppercase}}</strong></p>
+		<div ng-bind-html="post.content"></div>
+	</div>
+	
+</div>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org"
+      layout:decorator="layout">
+      
+      <head>
+        <title>Home</title>
+    </head>
+    <body>
+    	<div layout:fragment="content">
+	        <p>Welcome </p>
+	        
+	        <hr/>
+	        	<h2>File Uploading</h2>
+	        	<form action="uploadMyFile" th:action="@{/uploadMyFile}" method="post" enctype="multipart/form-data">
+				      <input type="file" name="myFile" />
+				      <input type="submit" />
+				 </form>
+				 <div th:if="${msg != null}">
+				 	<span th:text="${msg}">msg</span>
+				 </div>
+	        <hr/>
+	        
+    	</div>
+    	
+    </body>
+    
+</html>

@@ -1,21 +1,22 @@
-# SpringBoot : Learn By Example Book
+SpringBoot : Learn By Example
+===========================
 
-This repository contains code examples for SpringBoot By Example book.
+This repository contains code examples for **SpringBoot Learn By Example** book.
 
 Table of contents
 
 1. Introduction to SpringBoot
 	* Overview of Spring framework
 	* Developing Web Application using SpringMVC and JPA
-	* A quick taste of SpringBoot
+	* A Quick Taste of SpringBoot
 
 2. Getting Started with SpringBoot
-	* Introduction to SpringBoot
-	* First SpringBoot application
+	* What is SpringBoot?
+	* Our First SpringBoot Application
 	
 3. SpringBoot Behind the scenes
-	* Exploring the power of @Conditional
-	* SpringBoot AutoConfiguration
+	* Exploring the Power of @Conditional
+	* How SpringBoot AutoConfiguration Works?
 	
 4. Creating Custom SpringBoot Starter
 	* Create twitter4j-spring-boot-starter
@@ -23,37 +24,62 @@ Table of contents
 5. SpringBoot Essentials	
 	* Logging
 	* Externalizing Configuration Properties
-	* Type-safe Configuration Properties
 	* Developer Tools
 	
 6. Working with JdbcTemplate
+	* Using JdbcTemplate without SpringBoot
+	* Using JdbcTemplate with SpringBoot
+	* Initializing Database
+	* How to use other Connection Pooling libraries?
 
 7. Working with MyBatis
+	* Using SpringBoot MyBatis Starter
 
 8. Working with JOOQ
+	* Using SpringBoot JOOQ Starter
 
-9. Working with Spring Data JPAs
+9. Working with JPA
+	* Introducing Spring Data JPA
+	* Using Spring Data JPA with SpringBoot
 
 10. Working with MongoDB
+	* Introducing MongoDB
+	* Getting Started with MongoDB using Mongo Shell
+	* Talking to MongoDB using Spring Data Mongo
 
-11. Developing Web Applications using SpringMVC and Thymeleaf
-	* Introducing SpringMVC
-	* Introducing Thymeleaf View Templates
+11. Web Applications with SpringBoot
+	* Developing Web Application using SpringBoot
 	* Using Tomcat, Jetty, Undertow Embedded Servlet Containers
-	* Multipart File Uploading
-	* Securing Web Applications using SpringSecurity
+	* Customizing SpringMVC configuration
+	* SpringBoot web application as deployable war
+	* SpringBoot Supporting View Templates
+	* Working with Thymeleaf Forms
+	* Data Validation
+	* File Uploading
+	* Using ResourceBundles for Internationalization (I18N)	
 	
+12. Building REST API using SpringBoot
+	* Introduction to RESTful WebServices
+	* REST API using SpringMVC
+	* REST API using Spring Data REST
+	* Consuming REST API from AngularJS
+
+13. Securing Web Applications using SpringBoot
+	* Spring Security in SpringBoot Web Application
+	* Method Level Security
+	* Securing REST API using SpringSecurity	
 	
-12. Developing Single Page Applications (SPA) using SpringMVC REST and AngularJS
-	* Introduction to AngularJS
-	* Creating REST API using SpringMVC
-	* Creating REST API using Spring Data REST
-	* Consuming RESTful WebServices from AngularJS
-	* Securing AngularJS application using SpringSecurity
-	
-13. SpringBoot Actuator
+14. SpringBoot Actuator
 	* Exploring Actuator Endpoints
-	* Metrics
+	* Customizing Actuator Endpoints
+	* Securing Actuator Endpoints
+	* CORS support for Actuator Endpoints
+	* Monitoring and management over JMX
+	* Monitoring and management using a remote shell
 	
-14. Testing
+15. Testing SpringBoot Applications
+	* Testing Support in SpringBoot
+	* Testing RESTful Services using RestTemplate
+	* Testing Secured Controller/Service Methods
+	* Testing with Mockito
 
