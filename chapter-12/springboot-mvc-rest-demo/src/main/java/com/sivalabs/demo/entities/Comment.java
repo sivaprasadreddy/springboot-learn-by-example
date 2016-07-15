@@ -10,15 +10,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 /**
  * @author Siva
  *
  */
+//@JsonIgnoreProperties({"post"})
 @Entity
 @Table(name = "COMMENTS")
 public class Comment
@@ -44,6 +49,12 @@ public class Comment
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name="updated_on")
     private Date updatedOn;
+    
+    //@JsonIgnore
+    @JsonBackReference
+    @ManyToOne(optional=false)
+    @JoinColumn(name="post_id")
+    private Post post;
 
 	public Integer getId() {
 		return id;
@@ -91,6 +102,14 @@ public class Comment
 
 	public void setUpdatedOn(Date updatedOn) {
 		this.updatedOn = updatedOn;
+	}
+
+	public Post getPost() {
+		return post;
+	}
+
+	public void setPost(Post post) {
+		this.post = post;
 	}
 
 }

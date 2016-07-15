@@ -11,7 +11,8 @@
 	<description>Working with JPA</description>
 
 	<modules>
-		<module>springboot-jpa-demo</module>		
+		<module>springboot-jpa-demo</module>
+		<module>springboot-multiple-datasources-demo</module>
 	</modules>
 	
 </project>

@@ -6,17 +6,19 @@ package com.sivalabs.demo.entities;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 /**
  * @author Siva
@@ -44,9 +46,9 @@ public class Post
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name="updated_on")
     private Date updatedOn;
-
-    @OneToMany
-    @JoinColumn(name="post_id")
+    
+    @JsonManagedReference    
+    @OneToMany(mappedBy="post", cascade=CascadeType.ALL)
     private List<Comment> comments;
 
     

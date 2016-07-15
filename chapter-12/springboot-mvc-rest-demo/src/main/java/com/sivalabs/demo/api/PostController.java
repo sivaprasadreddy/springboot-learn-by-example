@@ -99,6 +99,17 @@ public class PostController
         //postRepository.save(post);
     }
     
+    @RequestMapping(value="/{postId}/comments/{commentId}", method=RequestMethod.GET)
+    public Comment getPostComment(@PathVariable("postId") Integer postId, 
+            @PathVariable("commentId") Integer commentId)
+    {
+    	Comment comment = commentRepository.findOne(commentId);
+        if(comment == null){
+            throw new ResourceNotFoundException("No comment found with id="+commentId);
+        }
+        return comment;
+    }
+    
     @RequestMapping(value="/{postId}/comments/{commentId}", method=RequestMethod.POST)
     public void deletePostComment(@PathVariable("postId") Integer postId, 
                                   @PathVariable("commentId") Integer commentId)
