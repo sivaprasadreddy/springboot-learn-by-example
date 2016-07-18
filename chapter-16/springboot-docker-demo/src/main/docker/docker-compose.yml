@@ -1,0 +1,14 @@
+demo-mysql:
+  image: mysql:latest
+  environment:
+    - MYSQL_ROOT_PASSWORD=secret123
+    - MYSQL_DATABASE=demo
+    - MYSQL_USER=dbuser
+    - MYSQL_PASSWORD=secret
+
+springboot-docker-demo:
+  image: sivaprasadreddy/springboot-docker-demo
+  links:
+    - demo-mysql:mysql
+  ports:
+    - 8080:8080

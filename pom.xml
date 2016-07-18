@@ -30,6 +30,7 @@
 		<module>chapter-13</module>
 		<module>chapter-14</module>
 		<module>chapter-15</module>
-	</modules>
+        <module>chapter-16</module>
+    </modules>
 	
 </project>
