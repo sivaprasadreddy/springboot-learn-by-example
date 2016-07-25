@@ -10,7 +10,8 @@
     <description>Deploying SpringBoot Applications</description>
 
     <modules>
-        <module>springboot-docker-demo</module>
+        <module>springboot-heroku-demo</module>
+        <module>springboot-mysql-docker-demo</module>
     </modules>
 
 </project>

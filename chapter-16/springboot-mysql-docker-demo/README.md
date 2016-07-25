@@ -3,17 +3,17 @@
 
 ### Chapter 16 : Deploying SpringBoot Applications
 
-**springboot-docker-demo**: This module demonstrates running SpringBoot application in Docker container.
+**springboot-mysql-docker-demo**: This module demonstrates running SpringBoot application in Docker container.
 
 #### How to run?
 
-springboot-docker-demo> mvn spring-boot:run
+springboot-mysql-docker-demo> mvn spring-boot:run
 
 ## Running on Docker container
 
 Build the docker image
 
-springboot-docker-demo> mvn clean package docker:build
+springboot-mysql-docker-demo> mvn clean package docker:build
 
 
 ### Running MySQL and Application containers individually
@@ -25,7 +25,7 @@ docker run -d --name demo-mysql -e MYSQL_ROOT_PASSWORD=secret123 -e MYSQL_DATABA
 
 *Run application linking to demo-mysql container:*
 
-docker run -d --name springboot-docker-demo --link demo-mysql:mysql -p 8080:8080 sivaprasadreddy/springboot-docker-demo
+docker run -d --name springboot-docker-demo --link demo-mysql:mysql -p 8080:8080 sivaprasadreddy/springboot-mysql-docker-demo
 
 
 ### Running MySQL and Application using docker-compose

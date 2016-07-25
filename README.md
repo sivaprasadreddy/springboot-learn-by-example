@@ -83,3 +83,7 @@ Table of contents
 	* Testing Secured Controller/Service Methods
 	* Testing with Mockito
 
+16. Deploying SpringBoot Applications
+    * Running SpringBoot applications in production mode
+    * Deploying SpringBoot application on Heroku
+    * Running SpringBoot application on Docker

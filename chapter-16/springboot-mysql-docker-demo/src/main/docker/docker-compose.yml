@@ -7,7 +7,7 @@ demo-mysql:
     - MYSQL_PASSWORD=secret
 
 springboot-docker-demo:
-  image: sivaprasadreddy/springboot-docker-demo
+  image: sivaprasadreddy/springboot-mysql-docker-demo
   links:
     - demo-mysql:mysql
   ports:
