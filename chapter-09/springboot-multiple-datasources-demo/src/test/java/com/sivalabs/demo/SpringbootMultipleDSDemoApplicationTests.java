@@ -8,8 +8,8 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import com.sivalabs.demo.orders.entities.Order;
 import com.sivalabs.demo.orders.repositories.OrderRepository;
@@ -20,9 +20,8 @@ import com.sivalabs.demo.security.repositories.UserRepository;
  * @author Siva
  *
  */
-
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(SpringbootMultipleDSDemoApplication.class)
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = SpringbootMultipleDSDemoApplication.class)
 public class SpringbootMultipleDSDemoApplicationTests
 {
 

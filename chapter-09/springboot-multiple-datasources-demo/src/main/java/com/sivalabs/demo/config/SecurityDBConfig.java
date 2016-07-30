@@ -65,7 +65,7 @@ public class SecurityDBConfig
     {
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setDataSource(securityDataSource());
-        factory.setPackagesToScan(new String[]{"com.sivalabs.demo.security.entities"});
+        factory.setPackagesToScan("com.sivalabs.demo.security.entities");
         factory.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         
         Properties jpaProperties = new Properties();

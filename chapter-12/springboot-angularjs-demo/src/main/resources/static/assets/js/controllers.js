@@ -22,7 +22,7 @@ controllers.controller('PostController',function($scope, $http, $routeParams, $l
 		.error(function(data){
 			alert('Error');
 		});
-	}
+	};
 	
 	$scope.deletePost = function(postId){
 		$http.delete(rootUrl+'/posts/'+postId)
@@ -32,7 +32,7 @@ controllers.controller('PostController',function($scope, $http, $routeParams, $l
 		.error(function(data){
 			alert('Error');
 		});
-	}
+	};
 	
 	loadPost($routeParams.postId);
 });

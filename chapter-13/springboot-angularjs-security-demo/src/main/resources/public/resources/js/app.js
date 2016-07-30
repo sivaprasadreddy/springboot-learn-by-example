@@ -137,7 +137,7 @@ myApp.config(function($stateProvider, $urlRouterProvider, $locationProvider, $ht
 	
 	$rootScope.isUserLoggedIn = function(){
         return UserService.isUserLoggedIn();
-	}
+	};
  
 	$rootScope.logout = function()
 	{

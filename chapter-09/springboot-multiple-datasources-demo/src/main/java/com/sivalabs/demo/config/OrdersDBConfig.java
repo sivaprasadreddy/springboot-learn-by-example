@@ -65,7 +65,7 @@ public class OrdersDBConfig {
     {
     	LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setDataSource(ordersDataSource());
-        factory.setPackagesToScan(new String[]{"com.sivalabs.demo.orders.entities"});
+        factory.setPackagesToScan("com.sivalabs.demo.orders.entities");
         factory.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
 
         Properties jpaProperties = new Properties();

@@ -75,7 +75,7 @@ myApp.controller('PostController',
 			UtilService.notifyError('Problem in loading post details');
 		})
 		;
-	}
+	};
 
 	$scope.loadPost();
 	
