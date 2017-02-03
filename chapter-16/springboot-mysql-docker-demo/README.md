@@ -11,10 +11,13 @@ springboot-mysql-docker-demo> mvn spring-boot:run
 
 ## Running on Docker container
 
-Build the docker image
+Build the docker image using maven
 
 springboot-mysql-docker-demo> mvn clean package docker:build
 
+Build the docker image using gradle
+
+springboot-mysql-docker-demo> gradle buildDocker
 
 ### Running MySQL and Application containers individually
 

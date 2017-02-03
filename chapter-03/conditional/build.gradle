@@ -3,7 +3,7 @@ buildscript {
 		jcenter()
 	}
 	dependencies {
-		classpath "io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE"
+		classpath 'io.spring.gradle:dependency-management-plugin:0.6.0.RELEASE'
 	}
 }
 
@@ -25,7 +25,7 @@ repositories {
 
 dependencyManagement {
 	imports {
-		mavenBom 'io.spring.platform:platform-bom:2.0.1.RELEASE'
+		mavenBom 'io.spring.platform:platform-bom:Athens-SR3'
 	}
 }
 

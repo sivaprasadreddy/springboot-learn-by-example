@@ -1,0 +1,66 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.1.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath('se.transmode.gradle:gradle-docker:1.2')
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'docker'
+
+// This is used as the docker image prefix (org)
+group = 'sivaprasadreddy'
+
+jar {
+	baseName = 'springboot-mysql-docker-demo'
+	version = '1.0-SNAPSHOT'
+	archiveName = 'springboot-mysql-docker-demo.jar'
+}
+
+task buildDocker(type: Docker, dependsOn: build) {
+	push = false
+	applicationName = jar.baseName
+	dockerfile = file('src/main/docker/Dockerfile')
+	doFirst {
+		copy {
+			from jar
+			into stageDir
+		}
+	}
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	runtime('com.h2database:h2')
+	//runtime('org.postgresql:postgresql')
+	runtime('mysql:mysql-connector-java')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+
+eclipse {
+	classpath {
+		 containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
+		 containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
+	}
+}
