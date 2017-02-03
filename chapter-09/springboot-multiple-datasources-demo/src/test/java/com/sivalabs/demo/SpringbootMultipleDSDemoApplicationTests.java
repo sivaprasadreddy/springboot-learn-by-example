@@ -1,27 +1,26 @@
 package com.sivalabs.demo;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
-import java.util.List;
-
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
 import com.sivalabs.demo.orders.entities.Order;
 import com.sivalabs.demo.orders.repositories.OrderRepository;
 import com.sivalabs.demo.security.entities.User;
 import com.sivalabs.demo.security.repositories.UserRepository;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.List;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * @author Siva
  *
  */
 
-@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest(classes = SpringbootMultipleDSDemoApplication.class)
 public class SpringbootMultipleDSDemoApplicationTests
 {

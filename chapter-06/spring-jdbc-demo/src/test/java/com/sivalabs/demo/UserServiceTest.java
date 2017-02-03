@@ -3,20 +3,21 @@
  */
 package com.sivalabs.demo;
 
-import java.util.List;
-
 import org.junit.Test;
-import static org.junit.Assert.*;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.List;
+
+import static org.junit.Assert.*;
 
 /**
  * @author Siva
  *
  */
-@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(SpringRunner.class)
 @ContextConfiguration(classes=AppConfig.class)
 public class UserServiceTest 
 {
@@ -44,6 +45,4 @@ public class UserServiceTest
 		assertEquals("Siva", newUser.getName());
 		assertEquals("siva@gmail.com", newUser.getEmail());
 	}
-	
-	
 }
