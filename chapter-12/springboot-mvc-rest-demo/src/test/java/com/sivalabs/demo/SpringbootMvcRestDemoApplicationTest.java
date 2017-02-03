@@ -7,6 +7,7 @@ import com.sivalabs.demo.entities.Post;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.embedded.LocalServerPort;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +31,7 @@ import static org.junit.Assert.assertNotNull;
 webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class SpringbootMvcRestDemoApplicationTest
 {
-	@Value("${local.server.port}")
+	@LocalServerPort
 	private int port;
 	
 	RestTemplate restTemplate = new RestTemplate();
