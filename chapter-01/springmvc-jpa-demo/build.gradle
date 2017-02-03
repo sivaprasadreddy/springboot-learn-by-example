@@ -1,0 +1,38 @@
+
+apply plugin: 'war'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+jar {
+	baseName = 'springmvc-jpa-demo'
+	version = '1.0-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	jcenter()
+}
+
+dependencies {
+	compile "org.springframework:spring-webmvc:4.2.4.RELEASE"
+	compile "org.springframework.data:spring-data-jpa:1.9.2.RELEASE"
+	compile "org.thymeleaf:thymeleaf-spring4:2.1.4.RELEASE"
+	compile "org.hibernate:hibernate-entitymanager:4.3.11.Final"
+	compile "org.slf4j:jcl-over-slf4j:1.7.13"
+	compile "org.slf4j:slf4j-api:1.7.13"
+	compile "org.slf4j:slf4j-log4j12:1.7.13"
+	compile "log4j:log4j:1.2.17"
+	compile "com.h2database:h2:1.4.190"
+	compile "commons-dbcp:commons-dbcp:1.4"
+	compile "mysql:mysql-connector-java:5.1.38"
+	providedCompile "javax.servlet:javax.servlet-api:3.1.0"
+}
+
+
+eclipse {
+	classpath {
+		 containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
+		 containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
+	}
+}

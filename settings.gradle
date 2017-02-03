@@ -1,5 +1,6 @@
 
 include 'chapter-01/hello-springboot'
+include 'chapter-01/springmvc-jpa-demo'
 include 'chapter-02/springboot-basic'
 include 'chapter-03/conditional'
 include 'chapter-04/twitter4j-spring-boot-autoconfigure'
