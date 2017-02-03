@@ -12,8 +12,7 @@ import java.util.Collections;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.boot.test.WebIntegrationTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.hateoas.PagedResources;
 import org.springframework.hateoas.hal.Jackson2HalModule;
@@ -34,8 +33,8 @@ import com.sivalabs.demo.entities.Post;
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(SpringbootDataRestDemoApplication.class)
-@WebIntegrationTest
+@SpringBootTest(classes = SpringbootDataRestDemoApplication.class,
+webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class SpringbootDataRestDemoApplicationTest
 {
 	RestTemplate restTemplate = new RestTemplate();

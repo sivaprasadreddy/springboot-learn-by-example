@@ -10,9 +10,8 @@ import java.util.Collections;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.boot.test.TestRestTemplate;
-import org.springframework.boot.test.WebIntegrationTest;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.hateoas.PagedResources;
 import org.springframework.hateoas.hal.Jackson2HalModule;
@@ -32,8 +31,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = SpringbootTestingDemoApplication.class)
-@WebIntegrationTest(randomPort=true)
+@SpringBootTest(classes = SpringbootTestingDemoApplication.class,
+webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class DemoApplicationRestTests
 {
 
@@ -43,7 +42,7 @@ public class DemoApplicationRestTests
 	@Test
 	public void testPing()
 	{
-		RestTemplate restTemplate = new TestRestTemplate("admin","admin123");
+		TestRestTemplate restTemplate = new TestRestTemplate("admin","admin123");
 		String resp = restTemplate.getForObject("http://localhost:"+port+"/ping", String.class);
 		System.err.println(resp);
 	}
@@ -52,7 +51,7 @@ public class DemoApplicationRestTests
 	public void testGetUsers()
 	{
 
-		RestTemplate restTemplate = restTemplate();
+		TestRestTemplate restTemplate = restTemplate();
 		ResponseEntity<PagedResources<User>> responseEntity = 
 				restTemplate.exchange(
 								"http://localhost:"+port+"/users",
@@ -73,10 +72,10 @@ public class DemoApplicationRestTests
 
 	}
 	
-	protected RestTemplate restTemplate() 
+	protected TestRestTemplate restTemplate()
 	{
-		  RestTemplate restTemplate = new TestRestTemplate("admin","admin123");
-		
+		RestTemplate restTemplate = new RestTemplate();
+
 		  ObjectMapper mapper = new ObjectMapper();
 		  mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 		  mapper.registerModule(new Jackson2HalModule());
@@ -86,7 +85,8 @@ public class DemoApplicationRestTests
 		  converter.setObjectMapper(mapper);
 		  
 		  restTemplate.setMessageConverters(Arrays.asList(converter));
-		  return restTemplate;
+
+		  return new TestRestTemplate(restTemplate, "admin","admin123");
 	}
 
 }

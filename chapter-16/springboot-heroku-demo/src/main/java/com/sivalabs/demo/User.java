@@ -2,8 +2,6 @@ package com.sivalabs.demo;
 
 import javax.persistence.*;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
 @Entity
 @Table(name="USERS")
 public class User

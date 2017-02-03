@@ -13,8 +13,7 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.boot.test.WebIntegrationTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -28,9 +27,9 @@ import com.sivalabs.demo.entities.Post;
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(SpringbootMvcRestDemoApplication.class)
-@WebIntegrationTest(randomPort=true)
-public class SpringbootMvcRestDemoApplicationTest 
+@SpringBootTest(classes = SpringbootMvcRestDemoApplication.class,
+webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+public class SpringbootMvcRestDemoApplicationTest
 {
 	@Value("${local.server.port}")
 	private int port;

@@ -9,7 +9,7 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.sivalabs.demo.domain.User;
@@ -21,7 +21,7 @@ import com.sivalabs.demo.mappers.UserMapper;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(SpringbootMyBatisDemoApplication.class)
+@SpringBootTest(classes=SpringbootMyBatisDemoApplication.class)
 public class SpringbootMyBatisDemoApplicationTests
 {
 
