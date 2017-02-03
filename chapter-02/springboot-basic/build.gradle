@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '1.3.6.RELEASE'
+		springBootVersion = '1.5.1.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -11,7 +11,7 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'spring-boot' 
+apply plugin: 'org.springframework.boot'
 
 jar {
 	baseName = 'springboot-basic'
