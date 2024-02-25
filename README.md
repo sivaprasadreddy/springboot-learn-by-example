@@ -3,8 +3,6 @@ SpringBoot : Learn By Example
 
 This repository contains code examples for **SpringBoot Learn By Example** book.
 
-[![Build Status](https://travis-ci.org/sivaprasadreddy/springboot-learn-by-example.svg?branch=master)](https://travis-ci.org/sivaprasadreddy/springboot-learn-by-example)
-
 Table of contents
 
 1. Introduction to SpringBoot
